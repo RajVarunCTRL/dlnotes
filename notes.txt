@@ -1,0 +1,109 @@
+Roles:
+Executive Sponsor	→ Starts project
+Project Manager 	→ Plans and drives
+Business Lead / PO 	→ Owns product
+SME 				→ Gives deep business rules
+Technical Lead 		→ Designs solution
+Infra 				→ Prepares environments
+Developer 			→ Builds
+Tester 				→ Validates
+Infra + PM + Sponsor→ Deploy
+All 				→ Maintain
+ 
+ADLC/SDLC
+INITIATION 					— Executive Sponsor Starts the Project:
+								- "We need to reduce branch workload by creating 
+								an online loan application portal."
+								- Approves budget and timeline (6 months)
+								- Assigns the Project Manager to handle execution
+							Executive Sponsor → Project Manager
+REQUIREMENT GATHERING		- PM, Business Lead, SME Work Together
+							+Project Manager
+								- Conducts kick-off meeting
+								- Aligns stakeholders
+								- Sets communication plan
+							+Business Lead / Product Owner
+								- Defines the vision:
+								“Customer should submit loan application 
+								online with document upload and real-time 
+								eligibility check.”
+								- Writes high-level requirements
+							+SME: (Loan Processing Expert)
+								Explains:
+									Loan workflow
+									Required documents
+									Business rules (eligibility, age, salary limits)
+									Risk assessment criteria
+									Prepares mock screens for loan form
+									"If customer CIBIL < 650,
+									system must auto-reject application."
+									PM → PO → SME → Back to PO
+TECHNICAL DESIGN			-Technical Lead Takes Over
+								+Technical Lead
+								Converts requirements into:
+									Database tables (customer, documents, applications)
+									APIs (submit application, document upload, eligibility API)
+									UI architecture (React + NodeJS + PostgreSQL)
+									Estimates timeline 
+									Sends tech plan to PM
+								+Infra Team
+								Creates:
+									DEV Server
+									QA Server
+									UAT Server
+									Production environment
+									Prepares Git repo, CI/CD pipeline - DevOps
+									PO + SME → Technical Lead → Infra → Project Manager
+DEVELOPMENT						-Dev Team Builds the Portal
+								+ Developer:
+									Builds:
+										Customer registration page
+										Loan application form
+										Upload documents module
+										Eligibility calculation module
+									Performs unit testing
+									Submits code for review
+								+Technical Lead:
+									Reviews code
+									Ensures standards
+								Technical Lead → Developer → TL (review)
+TESTING							-QA Validates the System
+									+Tester:
+									Creates test cases:
+										Valid customer scenario
+										Invalid CIBIL score
+										Missing documents
+										Wrong date of birth
+									Executes testing
+									Logs defects in JIRA
+									+Developer:
+										Fixes defects
+									+SME:
+										Validates final business flow in UAT
+									Developer → Tester → Developer → Tester → SME
+DEPLOYMENT						Infra + PM + Sponsor
+									+Infra Team:
+									Creates production build
+									Deploys the loan portal to cloud servers
+									+Technical Lead
+									Validates deployment
+									Runs smoke tests
+ 
+									+Project Manager
+									Coordinates go-live with business team
+									Sends final status report
+ 
+									+Executive Sponsor
+									Approves final production launch
+									Announces to business users	
+								Tester → Infra → TL → PM → Executive Sponsor									
+ 
+MAINTENANCE						-Live Issues & Enhancements
+									+Infra Team
+										Monitors CPU, DB load, API errors
+									+Developer
+									Fixes production issues (e.g., document upload failure)
+									+Business Lead
+									Adds enhancements (e.g., auto-populate PAN from Aadhaar)	
+ 
+									Infra ↔ Developer ↔ Business Lead ↔ Project Manager
